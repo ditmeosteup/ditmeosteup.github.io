@@ -12,24 +12,34 @@
     <meta property="og:image" content="https://image.pieland.xyz/file/1a1f57a123b5269d20e85.jpg" />
     <meta content="summary_large_image" name="twitter:card" />
     <style>
-      #box {
+      .container {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
+
+      .introduce {
+        text-align: center;
+      }
+
       #info {
         margin: 20px;
       }
-      #crackimg {
-        max-width: 270px;
+
+      img {
+        max-width: 100%;
+        margin-bottom: 8px;
       }
 
       body {
         background-color: #1e1e1e;
         color: #c9d1d9;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 40px;
       }
 
-      pre,
-      code {
+      pre, code {
         background-color: #2d2d2d;
         color: #dcdcdc;
         border-radius: 5px;
@@ -61,7 +71,44 @@
   </head>
 
   <body>
-    <div id="box">
+    <div class="container">
+
+      <h1>Expose "OSteup" - A project made by a group of 12th-grade students</h1>
+
+      <p class="introduce">
+        Một project được quảng cáo tăng tối đa hiệu suất, công năng và kéo dài tuổi thọ máy, can thiệp trực tiếp bằng ADB - 1 công nghệ chưa từng xuất hiện tại Việt Nam. Dự án này được góp mặt tại cuộc thi khoa học kĩ thuật cấp tỉnh tại Hưng Yên và được chọn vào vòng chung kết cuộc thi học sinh sinh viên với ý tưởng khởi nghiệp cấp quốc gia. Nhưng đằng sau phần mềm tối ưu hiệu suất đó là 1 sự thật phũ phàng, 1 sự ăn cắp chất xám kèm với 1 vài tweak không hề tối ưu.
+      </p>
+
+      <div class="start">
+        <h2>Cớ sự</h2>
+        <p>Vào 1 ngày nọ (3/9/2024), trong khi tôi đang code và tái cấu trúc server discord của tôi, tôi vô tình xem được link `cheesethesylv` gửi trên server discord: </p>
+
+        <img src="assets/message_1.png" alt="" />
+
+        <p>Tôi click vô website đó và tôi rất bất ngờ khi app bị crack và có API Gen Key. Lúc đó tôi không hiểu làm thế nào họ có thể crack được app và tìm ra được API key. Tôi bắt dầu tải app Ostebox về và thử decompile APK thì thật bất ngờ: </p>
+
+        <img src="assets/apk_decompiled_source_1.png" alt="">
+        <img src="assets/apk_decompiled_source_2.png" alt="">
+
+        <p>LMFAO??? App không hề được bảo vệ chống ăn cắp mã nguồn (Obfuscate / Obf), tuyệt. Tôi tải source về và tôi thử kiểm tra các request. Và tôi không phải tìm lâu: </p>
+
+        <img src="assets/api_key_moment.png" alt="">
+
+        <p>Tôi có lên youtube xem hướng dẫn cách sử dụng app này. Trong khi tôi xem video, tôi phát hiện ra app này có sử dụng ADB và phong cách trình bày rất giống với <a href="https://github.com/RikkaApps/Shizuku">Shizuku</a> - 1 app kết nối ADB do Rikka phát triển. Tôi tiếp tục lục tung source code vừa decompile lúc nãy. Và tôi rất sốc: </p>
+        
+        <img src="assets/same_code_shizuku.png" alt="">
+
+        <p>What the heck??? 5 học sinh lớp 12 ăn cắp code từ người Trung Quốc??? Thật không thể tin được! Các cháu nay cấp 3 rồi mà lại có thói quen ăn cắp code mà không hề xin phép chủ sở hữu? Tôi thật sự thất vọng về học sinh ngày nay.</p>
+
+        <p>Và theo luật của nhà phát triển Rikka đối với app Shikuzu cùng với điều khoản trong giấy phép Apache 2.0: </p>
+
+        <img src="assets/license.png" alt="">
+        <img src="assets/apache2_0.png" alt="">
+        <img src="assets/rule_shizuku.png" alt="">
+
+        <p>Osteup đã vi phạm vào điều khoản 5 - Thông báo bản quyền trong giấy phép Apache 2.0, cùng với vi phạm luật của Rikka với app Shizuku - khi sao chép 1 phần mã nguồn app Shizuku và phân phối trên website mà không hề xin phép tác giả. Đây là 1 vấn nạn mà có lẽ còn rất lâu nữa học sinh mới nhận thức được bản quyền và giấy phép bản quyền.</p>
+      </div>
+
       <p>
         <img src="https://image.pieland.xyz/file/1a1f57a123b5269d20e85.jpg" alt="dcmm" id="crackimg" />
       </p>
@@ -86,9 +133,19 @@
           <li>4/9/2024: The retards changed the key generation link to the one found by <code>toidicakhia</code>,
           but the APK only contains the key verification endpoint, so there was no newer APK to crack.</li>
         </ul>
+
+        <p>Facts</p>
+        <ul>
+          <li>
+
+          </li>
+        </ul>
+
+
         <p>Credits:</p>
         <ul>
-          <li><code>pi.kt</code>: ad-link bypass, finding the key generation link, cracking the APK,</li>
+          <li><code>pi.kt</code>: ad-link bypass, finding the key generation link, cracking the APK</li>
+          <li><code>toidicakhia</code>: reverse engineer, ad-link bypass, find the key generation link</li>
           <li><code>vnpower</code>, <code>stdpi</code>, and <code>azuree.neko</code>: wrote several key generators</li>
           <li><code>vnpower</code>: hosting and domain provider for the original web at <code>https://dmosteup.exozy.me/</code></li>
           <li><code>qtpctechhxd</code>: the right honorable, the lord donor who generously bequeathed the domain <code>ditmeosteup.online</code> to me</li>
